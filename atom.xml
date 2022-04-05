@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Sirius&#39;s Blog</title>
+  
+  <subtitle>for tech and fun</subtitle>
+  <link href="https://sirius1919.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://sirius1919.github.io/"/>
+  <updated>2022-04-05T12:09:28.589Z</updated>
+  <id>https://sirius1919.github.io/</id>
+  
+  <author>
+    <name>sirius wang</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JDBC</title>
+    <link href="https://sirius1919.github.io/2022/04/05/8fe47ff4.html"/>
+    <id>https://sirius1919.github.io/2022/04/05/8fe47ff4.html</id>
+    <published>2022-04-05T06:24:14.000Z</published>
+    <updated>2022-04-05T12:09:28.589Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;什么是-JDBC？&quot;&gt;&lt;a href=&quot;#什么是-JDBC？&quot; class=&quot;headerlink&quot; title=&quot;什么是 JDBC？&quot;&gt;&lt;/a&gt;什么是 JDBC？&lt;/h1&gt;&lt;p&gt;Java 数据库连接，（Java Database Connectivity，简称 JDBC）是 Java 语言中用来规范客户端程序如何来访问数据库的应用程序接口，提供了诸如查询和更新数据库中数据的方法。JDBC 也是 Sun Microsystems 的商标。我们通常说的 JDBC 是面向关系型数据库的。&lt;br&gt;JDBC API 允许用户访问任何形式的表格数据，尤其是存储在关系数据库中的数据。&lt;br&gt;执行流程：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;连接数据源，如：数据库。&lt;/li&gt;
+&lt;li&gt;为数据库传递查询和更新指令。&lt;/li&gt;
+&lt;li&gt;处理数据库响应并返回的结果。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;JDBC-架构&quot;&gt;&lt;a href=&quot;#JDBC-架构&quot; class=&quot;headerlink&quot; title=&quot;JDBC 架构&quot;&gt;&lt;/a&gt;JDBC 架构&lt;/h1&gt;&lt;p&gt;分为双层架构和三层架构。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>09. DCL</title>
+    <link href="https://sirius1919.github.io/2022/04/03/1b142673.html"/>
+    <id>https://sirius1919.github.io/2022/04/03/1b142673.html</id>
+    <published>2022-04-03T08:50:12.000Z</published>
+    <updated>2022-04-05T12:09:28.572Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;默认情况下，mysql 使用的用户都是 root 用户——超级管理员，拥有全部的权限。但是，一个公司里面的数据库服务器上面可能同时运行着很多个项目的数据库。所以，我们应该可以根据不同的项目建立不同的用户，分配不同的权限来管理和维护数据库。&lt;br&gt;mysqld 是 MySQL 的守护程序，服务器端。mysql 是 MySQL 的命令行工具，客户端。&lt;br&gt;&lt;img src=&quot;https://cdn.nlark.com/yuque/0/2022/png/22022914/1648976165050-ac7d297a-b10c-4ed4-851b-031e957f3c0e.png#clientId=u0a246821-fec5-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=248&amp;id=uc9a5f740&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=335&amp;originWidth=394&amp;originalType=binary%E2%88%B6=1&amp;rotation=0&amp;showTitle=false&amp;size=36925&amp;status=done&amp;style=none&amp;taskId=u7e60754a-f490-450e-aadb-2c5034e4703&amp;title=&amp;width=292&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;创建用户&quot;&gt;&lt;a href=&quot;#创建用户&quot; class=&quot;headerlink&quot; title=&quot;创建用户&quot;&gt;&lt;/a&gt;创建用户&lt;/h1&gt;&lt;h2 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;语法&lt;/h2&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;USER&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&amp;#x27;用户名&amp;#x27;&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;&amp;#x27;主机名&amp;#x27;&lt;/span&gt; IDENTIFIED &lt;span class=&quot;keyword&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&amp;#x27;密码&amp;#x27;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;关键字说明&quot;&gt;&lt;a href=&quot;#关键字说明&quot; class=&quot;headerlink&quot; title=&quot;关键字说明&quot;&gt;&lt;/a&gt;关键字说明&lt;/h2&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>05. 事务概述</title>
+    <link href="https://sirius1919.github.io/2022/04/03/9b3172b1.html"/>
+    <id>https://sirius1919.github.io/2022/04/03/9b3172b1.html</id>
+    <published>2022-04-03T08:14:55.000Z</published>
+    <updated>2022-04-05T12:09:28.563Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;什么是事务&quot;&gt;&lt;a href=&quot;#什么是事务&quot; class=&quot;headerlink&quot; title=&quot;什么是事务&quot;&gt;&lt;/a&gt;什么是事务&lt;/h1&gt;&lt;p&gt;在实际的开发过程中，一个业务操作如：转账，往往是要多次访问数据库才能完成的。转账是一个用户扣钱，另一个用户加钱。如果其中有一条 SQL 语句出现异常，这条 SQL 就可能执行失败。&lt;br&gt;事务执行是一个整体，所有的 SQL 语句都必须执行成功。如果其中有 1 条 SQL 语句出现异常，则所有的 SQL 语句都要回滚，整个业务执行失败。&lt;/p&gt;
+&lt;h1 id=&quot;转账的操作&quot;&gt;&lt;a href=&quot;#转账的操作&quot; class=&quot;headerlink&quot; title=&quot;转账的操作&quot;&gt;&lt;/a&gt;转账的操作&lt;/h1&gt;&lt;p&gt;模拟张三给李四转 500 元钱，一个转账的业务操作最少要执行下面的 2 条语句：&lt;br&gt;张三账号 -500&lt;br&gt;李四账号+500&lt;/p&gt;
+&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;-- 创建数据表&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;TABLE&lt;/span&gt; account (&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;id &lt;span class=&quot;type&quot;&gt;INT&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;PRIMARY&lt;/span&gt; KEY AUTO_INCREMENT,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;NAME &lt;span class=&quot;type&quot;&gt;VARCHAR&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;balance &lt;span class=&quot;keyword&quot;&gt;DOUBLE&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;-- 添加数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;INTO&lt;/span&gt; account (NAME, balance) &lt;span class=&quot;keyword&quot;&gt;VALUES&lt;/span&gt; (&lt;span class=&quot;string&quot;&gt;&amp;#x27;张三&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1000&lt;/span&gt;), (&lt;span class=&quot;string&quot;&gt;&amp;#x27;李四&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1000&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>04. 表连接查询及子查询</title>
+    <link href="https://sirius1919.github.io/2022/04/03/b474004e.html"/>
+    <id>https://sirius1919.github.io/2022/04/03/b474004e.html</id>
+    <published>2022-04-03T07:12:03.000Z</published>
+    <updated>2022-04-05T12:09:28.557Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;什么是多表查询&quot;&gt;&lt;a href=&quot;#什么是多表查询&quot; class=&quot;headerlink&quot; title=&quot;什么是多表查询&quot;&gt;&lt;/a&gt;什么是多表查询&lt;/h1&gt;&lt;p&gt;数据准备&lt;/p&gt;
+&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;#创建部门表&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;table&lt;/span&gt; dept(&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    id &lt;span class=&quot;type&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;primary&lt;/span&gt; key auto increment,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    name &lt;span class=&quot;type&quot;&gt;varchar&lt;/span&gt; (&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;into&lt;/span&gt; dept (name) &lt;span class=&quot;keyword&quot;&gt;values&lt;/span&gt; (&lt;span class=&quot;string&quot;&gt;&amp;#x27;开发部&amp;#x27;&lt;/span&gt;),(&lt;span class=&quot;string&quot;&gt;&amp;#x27;市场部&amp;#x27;&lt;/span&gt;),(&lt;span class=&quot;string&quot;&gt;&amp;#x27;财务部&amp;#x27;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#创建员工表&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;table&lt;/span&gt; emp (&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    id &lt;span class=&quot;type&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;primary&lt;/span&gt; key auto increment,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    name &lt;span class=&quot;type&quot;&gt;varchar&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    gender &lt;span class=&quot;type&quot;&gt;char&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;), &lt;span class=&quot;comment&quot;&gt;--性别&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    salary &lt;span class=&quot;keyword&quot;&gt;double&lt;/span&gt;, &lt;span class=&quot;comment&quot;&gt;--工资&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    join_date &lt;span class=&quot;type&quot;&gt;date&lt;/span&gt;, &lt;span class=&quot;comment&quot;&gt;--入职日期&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    dept_id &lt;span class=&quot;type&quot;&gt;int&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;foreign&lt;/span&gt; key(dept id)&lt;span class=&quot;keyword&quot;&gt;references&lt;/span&gt; dept(id) &lt;span class=&quot;comment&quot;&gt;--外键，关联部门表(部门表的主键)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;into&lt;/span&gt; emp (name, gender, salary, join_date, dept_id) &lt;span class=&quot;keyword&quot;&gt;values&lt;/span&gt; (&lt;span class=&quot;string&quot;&gt;&amp;#x27;孙悟空&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&amp;#x27;男&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;7200&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&amp;#x27;2013-02-24&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;into&lt;/span&gt; emp (name, gender, salary, join_date, dept_id) &lt;span class=&quot;keyword&quot;&gt;values&lt;/span&gt; (&lt;span class=&quot;string&quot;&gt;&amp;#x27;猪八戒&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&amp;#x27;男&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3600&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&amp;#x27;2010-12-02&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;into&lt;/span&gt; emp (name, gender, salary, join_date, dept_id) &lt;span class=&quot;keyword&quot;&gt;values&lt;/span&gt; (&lt;span class=&quot;string&quot;&gt;&amp;#x27;唐僧&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&amp;#x27;男&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;9000&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&amp;#x27;2008-08-08&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;into&lt;/span&gt; emp (name, gender, salary, join_date, dept_id) &lt;span class=&quot;keyword&quot;&gt;values&lt;/span&gt; (&lt;span class=&quot;string&quot;&gt;&amp;#x27;白骨精&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&amp;#x27;女&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;5000&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&amp;#x27;2015-10-07&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;into&lt;/span&gt; emp (name, gender, salary, join_date, dept_id) &lt;span class=&quot;keyword&quot;&gt;values&lt;/span&gt; (&lt;span class=&quot;string&quot;&gt;&amp;#x27;蜘蛛精&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&amp;#x27;女&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;4500&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&amp;#x27;2011-03-14&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;多表查询的作用&quot;&gt;&lt;a href=&quot;#多表查询的作用&quot; class=&quot;headerlink&quot; title=&quot;多表查询的作用&quot;&gt;&lt;/a&gt;多表查询的作用&lt;/h1&gt;&lt;p&gt;比如：我们想查询孙悟空的名字和他所在的部门的名字，则需要使用多表查询。&lt;br&gt;如果一条 SQL 语句查询多张表，因为查询结果在多张不同的表中。每张表取 1 列或多列。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>03. 约束</title>
+    <link href="https://sirius1919.github.io/2022/03/20/8f82f467.html"/>
+    <id>https://sirius1919.github.io/2022/03/20/8f82f467.html</id>
+    <published>2022-03-20T14:45:05.000Z</published>
+    <updated>2022-04-05T12:09:28.674Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;约束用于限制加入表的数据的类型。&lt;br&gt;可以在创建表时规定约束（通过 CREATE TABLE 语句），或者在表创建之后也可以（通过 ALTER TABLE 语句）。&lt;br&gt;我们将主要探讨以下几种约束：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;NOT NULL&lt;/li&gt;
+&lt;li&gt;UNIQUE&lt;/li&gt;
+&lt;li&gt;PRIMARY KEY&lt;/li&gt;
+&lt;li&gt;FOREIGN KEY&lt;/li&gt;
+&lt;li&gt;CHECK&lt;/li&gt;
+&lt;li&gt;DEFAULT&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;PRIMARY-KEY&quot;&gt;&lt;a href=&quot;#PRIMARY-KEY&quot; class=&quot;headerlink&quot; title=&quot;PRIMARY KEY&quot;&gt;&lt;/a&gt;PRIMARY KEY&lt;/h1&gt;&lt;p&gt;主键（PRIMARY KEY）的完整称呼是“主键约束”，是 MySQL 中使用最为频繁的约束。一般情况下，为了便于 DBMS 更快的查找到表中的记录，都会在表中设置一个主键。&lt;br&gt;主键分为单字段主键和多字段联合主键，本节将分别讲解这两种主键约束的创建、修改和删除。&lt;br&gt;使用主键应注意以下几点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每个表只能定义一个主键。&lt;/li&gt;
+&lt;li&gt;主键值必须唯一标识表中的每一行，且不能为 NULL，即表中不可能存在有相同主键值的两行数据。这是唯一性原则。&lt;/li&gt;
+&lt;li&gt;一个字段名只能在联合主键字段表中出现一次。&lt;/li&gt;
+&lt;li&gt;联合主键不能包含不必要的多余字段。当把联合主键的某一字段删除后，如果剩下的字段构成的主键仍然满足唯一性原则，那么这个联合主键是不正确的。这是最小化原则。&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>02. DQL高级查询</title>
+    <link href="https://sirius1919.github.io/2022/03/20/2dcae338.html"/>
+    <id>https://sirius1919.github.io/2022/03/20/2dcae338.html</id>
+    <published>2022-03-20T14:05:53.000Z</published>
+    <updated>2022-04-05T12:09:28.523Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;1-排序查询&quot;&gt;&lt;a href=&quot;#1-排序查询&quot; class=&quot;headerlink&quot; title=&quot;1. 排序查询&quot;&gt;&lt;/a&gt;1. 排序查询&lt;/h1&gt;&lt;h2 id=&quot;升序排序&quot;&gt;&lt;a href=&quot;#升序排序&quot; class=&quot;headerlink&quot; title=&quot;升序排序&quot;&gt;&lt;/a&gt;升序排序&lt;/h2&gt;&lt;p&gt;SELECT Company, OrderNumber FROM Orders ORDER BY Company ASC;&lt;br&gt;注：默认是升序排序，所以 ASC 可以不用加&lt;/p&gt;
+&lt;h2 id=&quot;降序排序&quot;&gt;&lt;a href=&quot;#降序排序&quot; class=&quot;headerlink&quot; title=&quot;降序排序&quot;&gt;&lt;/a&gt;降序排序&lt;/h2&gt;&lt;p&gt;SELECT Company, OrderNumber FROM Orders ORDER BY Company DESC;&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>装饰模式</title>
+    <link href="https://sirius1919.github.io/2022/03/20/e671036b.html"/>
+    <id>https://sirius1919.github.io/2022/03/20/e671036b.html</id>
+    <published>2022-03-20T06:47:58.000Z</published>
+    <updated>2022-04-05T12:09:28.662Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;0-写在前面&quot;&gt;&lt;a href=&quot;#0-写在前面&quot; class=&quot;headerlink&quot; title=&quot;0. 写在前面&quot;&gt;&lt;/a&gt;0. 写在前面&lt;/h1&gt;&lt;p&gt;在学习装饰模式之前，建议先了解代理模式。装饰模式和代理模式的类图结构几乎一样，仅仅是使用的目的有所差异，对比学习有助于理解装饰模式的使用。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;假设有一个接口Human，一个接口的实现类Man。人类Human是可以跑步的，但是不能飞。
+
+如果想给人类加上飞翔的翅膀，可以有三种解决方案：
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;修改实现类 Man 的方法，但不符合开闭原则&lt;br&gt;给实现类 Man 添加一个子类，扩展一个人类可以飞的功能。问题在于，如果又想给人类增加猎豹般奔跑的速度，需要继续扩展一个子类。显然，使用继承的方式去扩展一个类的功能，会增加类的层级，类的臃肿会加大维护的成本。&lt;br&gt;使用装饰模式扩展一个类的功能。好处在于，如果继承关系是纵向的，那么装饰类则是某个类横向的扩展，并不会影响继承链上的其他类。例如：C extends B , B extends A，如果需要扩展 B 的功能，可以设计一个 B 的装饰类，它并不会影响 B 的子类 C。如果采用在 B 里面增加方法，势必会使 B 的所有子类结构被改变。&lt;/p&gt;
+&lt;h1 id=&quot;2-装饰模式&quot;&gt;&lt;a href=&quot;#2-装饰模式&quot; class=&quot;headerlink&quot; title=&quot;2. 装饰模式&quot;&gt;&lt;/a&gt;2. 装饰模式&lt;/h1&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>XML概述、解析及搜索</title>
+    <link href="https://sirius1919.github.io/2022/03/13/e6498797.html"/>
+    <id>https://sirius1919.github.io/2022/03/13/e6498797.html</id>
+    <published>2022-03-13T04:18:34.000Z</published>
+    <updated>2022-04-05T12:09:28.701Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;XML-概述&quot;&gt;&lt;a href=&quot;#XML-概述&quot; class=&quot;headerlink&quot; title=&quot;XML 概述&quot;&gt;&lt;/a&gt;XML 概述&lt;/h1&gt;&lt;p&gt;XML 是可扩展标记语言(eXtensible Markup Language)的缩写，它是是一种数据表示格式，可以描述非常复杂的数据结构，常用于传输和存储数据。&lt;/p&gt;
+&lt;h2 id=&quot;格式&quot;&gt;&lt;a href=&quot;#格式&quot; class=&quot;headerlink&quot; title=&quot;格式&quot;&gt;&lt;/a&gt;格式&lt;/h2&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot;encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;data&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;sender&lt;/span&gt;&amp;gt;&lt;/span&gt;张三&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;sender&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;receiver&lt;/span&gt;&amp;gt;&lt;/span&gt;李四&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;receiver&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;src&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;addr&lt;/span&gt;&amp;gt;&lt;/span&gt;北京&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;addr&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;date&lt;/span&gt;&amp;gt;&lt;/span&gt;2822-11-1111:11:11&amp;lt;/8ate&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;src&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;current&lt;/span&gt;&amp;gt;&lt;/span&gt;武汉&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;current&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;dest&lt;/span&gt;&amp;gt;&lt;/span&gt;广州&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;dest&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;data&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;特点和使用场景&quot;&gt;&lt;a href=&quot;#特点和使用场景&quot; class=&quot;headerlink&quot; title=&quot;特点和使用场景&quot;&gt;&lt;/a&gt;特点和使用场景&lt;/h2&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java中的ThreadLocal详解</title>
+    <link href="https://sirius1919.github.io/2022/03/06/c5d931d5.html"/>
+    <id>https://sirius1919.github.io/2022/03/06/c5d931d5.html</id>
+    <published>2022-03-06T08:12:21.000Z</published>
+    <updated>2022-04-05T12:09:28.686Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;一、ThreadLocal-简介&quot;&gt;&lt;a href=&quot;#一、ThreadLocal-简介&quot; class=&quot;headerlink&quot; title=&quot;一、ThreadLocal 简介&quot;&gt;&lt;/a&gt;一、ThreadLocal 简介&lt;/h1&gt;&lt;p&gt;多线程访问同一个共享变量的时候容易出现并发问题，特别是多个线程对一个变量进行写入的时候，为了保证线程安全，一般使用者在访问共享变量的时候需要进行额外的同步措施才能保证线程安全性。ThreadLocal 是除了加锁这种同步方式之外的一种保证一种规避多线程访问出现线程不安全的方法，当我们在创建一个变量后，如果每个线程对其进行访问的时候访问的都是线程自己的变量这样就不会存在线程不安全问题。&lt;br&gt;ThreadLocal 是 JDK 包提供的，它提供线程本地变量，如果创建一乐 ThreadLocal 变量，那么访问这个变量的每个线程都会有这个变量的一个副本，在实际多线程操作的时候，操作的是自己本地内存中的变量，从而规避了线程安全问题，如下图所示：&lt;br&gt;&lt;img src=&quot;https://cdn.nlark.com/yuque/0/2022/png/22022914/1646554412782-30de3ab1-adef-4675-a45b-a10ecc67aab7.png#clientId=u88459a14-fedb-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=ud8a9f76d&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=305&amp;originWidth=667&amp;originalType=url%E2%88%B6=1&amp;rotation=0&amp;showTitle=false&amp;size=22521&amp;status=done&amp;style=none&amp;taskId=u2a73d96b-7a65-4224-9465-86f9106b3da&amp;title=&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;二、ThreadLocal-简单使用&quot;&gt;&lt;a href=&quot;#二、ThreadLocal-简单使用&quot; class=&quot;headerlink&quot; title=&quot;二、ThreadLocal 简单使用&quot;&gt;&lt;/a&gt;二、ThreadLocal 简单使用&lt;/h1&gt;&lt;p&gt;下面的例子中，开启两个线程，在每个线程内部设置了本地变量的值，然后调用 print 方法打印当前本地变量的值。如果在打印之后调用本地变量的 remove 方法会删除本地内存中的变量，代码如下所示：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;package&lt;/span&gt; test;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ThreadLocalTest&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; ThreadLocal&amp;lt;String&amp;gt; localVar = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ThreadLocal&amp;lt;&amp;gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String str)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//打印当前线程中本地内存中本地变量的值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        System.out.println(str + &lt;span class=&quot;string&quot;&gt;&amp;quot; :&amp;quot;&lt;/span&gt; + localVar.get());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//清除本地内存中的本地变量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        localVar.remove();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String[] args)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        Thread t1  = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Thread(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Runnable() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;comment&quot;&gt;//设置线程1中本地变量的值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                localVar.set(&lt;span class=&quot;string&quot;&gt;&amp;quot;localVar1&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;comment&quot;&gt;//调用打印方法&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                print(&lt;span class=&quot;string&quot;&gt;&amp;quot;thread1&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;comment&quot;&gt;//打印本地变量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                System.out.println(&lt;span class=&quot;string&quot;&gt;&amp;quot;after remove : &amp;quot;&lt;/span&gt; + localVar.get());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        Thread t2  = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Thread(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Runnable() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;comment&quot;&gt;//设置线程1中本地变量的值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                localVar.set(&lt;span class=&quot;string&quot;&gt;&amp;quot;localVar2&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;comment&quot;&gt;//调用打印方法&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                print(&lt;span class=&quot;string&quot;&gt;&amp;quot;thread2&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;comment&quot;&gt;//打印本地变量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                System.out.println(&lt;span class=&quot;string&quot;&gt;&amp;quot;after remove : &amp;quot;&lt;/span&gt; + localVar.get());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        t1.start();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        t2.start();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java 代理模式的原理分析</title>
+    <link href="https://sirius1919.github.io/2022/03/06/a5052947.html"/>
+    <id>https://sirius1919.github.io/2022/03/06/a5052947.html</id>
+    <published>2022-03-06T06:07:22.000Z</published>
+    <updated>2022-04-05T12:09:28.682Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;关于 Java 中的动态代理，我们首先需要了解的是一种常用的设计模式–代理模式，而对于代理，根据创建代理类的时间点，又可以分为静态代理和动态代理。&lt;/p&gt;
+&lt;h1 id=&quot;一、代理模式&quot;&gt;&lt;a href=&quot;#一、代理模式&quot; class=&quot;headerlink&quot; title=&quot;一、代理模式&quot;&gt;&lt;/a&gt;一、代理模式&lt;/h1&gt;&lt;p&gt;代理模式是常用的 java 设计模式，他的特征是代理类与委托类有同样的接口，代理类主要负责为委托类预处理消息、过滤消息、把消息转发给委托类，以及事后处理消息等。代理类与委托类之间通常会存在关联关系，一个代理类的对象与一个委托类的对象关联，代理类的对象本身并不真正实现服务，而是通过调用委托类的对象的相关方法，来提供特定的服务。简单的说就是，我们在访问实际对象时，是通过代理对象来访问的，代理模式就是在访问实际对象时引入一定程度的间接性，因为这种间接性，可以附加多种用途。在后面我会解释这种间接性带来的好处。&lt;br&gt;代理模式结构图（图片来自《大话设计模式》）：&lt;br&gt;&lt;img src=&quot;https://cdn.nlark.com/yuque/0/2022/png/22022914/1646547293810-a0606975-ea9c-4229-bca9-4c80c9677a51.png#clientId=ua7edea02-e952-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u49ced9e6&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=507&amp;originWidth=894&amp;originalType=url%E2%88%B6=1&amp;rotation=0&amp;showTitle=false&amp;size=223387&amp;status=done&amp;style=none&amp;taskId=u0cc7be09-7d8c-456b-9ced-c0f4ad8a5bd&amp;title=&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;作用&quot;&gt;&lt;a href=&quot;#作用&quot; class=&quot;headerlink&quot; title=&quot;作用&quot;&gt;&lt;/a&gt;作用&lt;/h2&gt;&lt;p&gt;代理就是被代理对象没有能力或者不愿意去完成某件事情，需要以代理类代替自己去完成这件事，代理就是用来对业务功能（方法）进行代理的。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java Class对象与反射机制</title>
+    <link href="https://sirius1919.github.io/2022/03/01/740b5ed0.html"/>
+    <id>https://sirius1919.github.io/2022/03/01/740b5ed0.html</id>
+    <published>2022-03-01T07:39:39.000Z</published>
+    <updated>2022-04-05T12:09:28.702Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;深入理解-Class-对象&quot;&gt;&lt;a href=&quot;#深入理解-Class-对象&quot; class=&quot;headerlink&quot; title=&quot;深入理解 Class 对象&quot;&gt;&lt;/a&gt;深入理解 Class 对象&lt;/h1&gt;&lt;h2 id=&quot;RRTI-的概念以及-Class-对象作用&quot;&gt;&lt;a href=&quot;#RRTI-的概念以及-Class-对象作用&quot; class=&quot;headerlink&quot; title=&quot;RRTI 的概念以及 Class 对象作用&quot;&gt;&lt;/a&gt;RRTI 的概念以及 Class 对象作用&lt;/h2&gt;&lt;p&gt;认识 Class 对象之前，先来了解一个概念，RTTI（Run-Time Type Identification）运行时类型识别，对于这个词一直是 C++ 中的概念，至于 Java 中出现 RRTI 的说法则是源于《Thinking in Java》一书，其作用是在运行时识别一个对象的类型和类的信息，这里分两种：传统的”RRTI”,它假定我们在编译期已知道了所有类型(在没有反射机制创建和使用类对象时，一般都是编译期已确定其类型，如 new 对象时该类必须已定义好)，另外一种是反射机制，它允许我们在运行时发现和使用类型的信息。在 Java 中用来表示运行时类型信息的对应类就是 Class 类，Class 类也是一个实实在在的类，存在于 JDK 的 java.lang 包中，其部分源码如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Class&lt;/span&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;T&lt;/span&gt;&amp;gt; &lt;span class=&quot;keyword&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;java&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;io&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;Serializable&lt;/span&gt;,&lt;span class=&quot;title&quot;&gt;GenericDeclaration&lt;/span&gt;,&lt;span class=&quot;title&quot;&gt;Type&lt;/span&gt;, &lt;span class=&quot;title&quot;&gt;AnnotatedElement&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; ANNOTATION= &lt;span class=&quot;number&quot;&gt;0x00002000&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; ENUM      = &lt;span class=&quot;number&quot;&gt;0x00004000&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; SYNTHETIC = &lt;span class=&quot;number&quot;&gt;0x00001000&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;native&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;registerNatives&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        registerNatives();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;/*&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;     * Private constructor. Only the Java Virtual Machine creates Class objects.（私有构造，只能由JVM创建该类）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;     * This constructor is not used and prevents the default constructor being&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;     * generated.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;     */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Class&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(ClassLoader loader)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// Initialize final field for classLoader.  The initialization value of non-null&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// prevents future JIT optimizations from assuming this final field is null.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        classLoader = loader;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;Class 类被创建后的对象就是 Class 对象，注意，Class 对象表示的是自己手动编写类的类型信息，比如创建一个 Shapes 类，那么，JVM 就会创建一个 Shapes 对应 Class 类的 Class 对象，该 Class 对象保存了 Shapes 类相关的类型信息。实际上在 Java 中每个类都有一个 Class 对象，每当我们编写并且编译一个新创建的类就会产生一个对应 Class 对象并且这个 Class 对象会被保存在同名.class 文件里(编译后的字节码文件保存的就是 Class 对象)。&lt;br&gt;那为什么需要这样一个 Class 对象呢？是这样的，当我们 new 一个新对象或者引用静态成员变量时，Java 虚拟机(JVM)中的类加载器子系统会将对应 Class 对象加载到 JVM 中，然后 JVM 再根据这个类型信息相关的 Class 对象创建我们需要实例对象或者提供静态变量的引用值。需要特别注意的是，手动编写的每个 class 类，无论创建多少个实例对象，在 JVM 中都只有一个 Class 对象，即在内存中每个类有且只有一个相对应的 Class 对象，挺拗口，通过下图理解（内存中的简易现象图）：&lt;br&gt;&lt;img src=&quot;https://cdn.nlark.com/yuque/0/2022/png/22022914/1646121377272-8262afc6-b27c-4565-8211-193adee5aa58.png#clientId=u6e2d7b76-aadd-4&amp;from=paste&amp;height=249&amp;id=u5bd98816&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=249&amp;originWidth=518&amp;originalType=binary%E2%88%B6=1&amp;size=90007&amp;status=done&amp;style=none&amp;taskId=uaf0ab62b-14a0-4525-8c19-57ae69d665e&amp;width=518&quot; alt=&quot;image.png&quot;&gt;&lt;br&gt;到这我们也就可以得出以下几点信息：&lt;br&gt;Class 类也是类的一种，与 class 关键字是不一样的。&lt;br&gt;手动编写的类被编译后会产生一个 Class 对象，其表示的是创建的类的类型信息，而且这个 Class 对象保存在同名.class 的文件中(字节码文件)，比如创建一个 Shapes 类，编译 Shapes 类后就会创建其包含 Shapes 类相关类型信息的 Class 对象，并保存在 Shapes.class 字节码文件中。&lt;br&gt;每个通过关键字 class 标识的类，在内存中有且只有一个与之对应的 Class 对象来描述其类型信息，无论创建多少个实例对象，其依据的都是用一个 Class 对象。&lt;br&gt;Class 类只存私有构造函数，因此对应 Class 对象只能有 JVM 创建和加载&lt;br&gt;Class 类的对象作用是运行时提供或获得某个对象的类型信息，这点对于反射技术很重要(关于反射稍后分析)。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java 注解</title>
+    <link href="https://sirius1919.github.io/2022/03/01/27cd5efa.html"/>
+    <id>https://sirius1919.github.io/2022/03/01/27cd5efa.html</id>
+    <published>2022-03-01T05:17:01.000Z</published>
+    <updated>2022-04-05T12:09:28.699Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Java 注解是在 JDK5 时引入的新特性，鉴于目前大部分框架(如 Spring)都使用了注解简化代码并提高编码的效率，因此掌握并深入理解注解对于一个 Java 工程师是来说是很有必要的事。本篇我们将通过以下几个角度来分析注解的相关知识点。&lt;/p&gt;
+&lt;h1 id=&quot;理解-Java-注解&quot;&gt;&lt;a href=&quot;#理解-Java-注解&quot; class=&quot;headerlink&quot; title=&quot;理解 Java 注解&quot;&gt;&lt;/a&gt;理解 Java 注解&lt;/h1&gt;&lt;p&gt;注解是对 Java 中类、方法、成员变量做标记，然后进行特殊处理，至于到底做何种处理由业务需求来决定。&lt;br&gt;实际上 Java 注解与普通修饰符(public、static、void 等)的使用方式并没有多大区别，下面的例子是常见的注解：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;public class AnnotationDemo &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    //@Test注解修饰方法A&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    @Test&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    public static void A()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        System.out.println(&amp;quot;Test.....&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    //一个方法上可以拥有多个不同的注解&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    @Deprecated&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    @SuppressWarnings(&amp;quot;uncheck&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    public static void B()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;通过在方法上使用@Test 注解后，在运行该方法时，测试框架会自动识别该方法并单独调用，@Test 实际上是一种标记注解，起标记作用，运行时告诉测试框架该方法为测试方法。而对于@Deprecated 和@SuppressWarnings(“uncheck”)，则是 Java 本身内置的注解，在代码中，可以经常看见它们，但这并不是一件好事，毕竟当方法或是类上面有@Deprecated 注解时，说明该方法或是类都已经过期不建议再用，@SuppressWarnings 则表示忽略指定警告，比如@SuppressWarnings(“uncheck”)，这就是注解的最简单的使用方式，那么下面我们就来看看注解定义的基本语法。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JUnit4 自定义rule</title>
+    <link href="https://sirius1919.github.io/2022/02/24/c01f95bc.html"/>
+    <id>https://sirius1919.github.io/2022/02/24/c01f95bc.html</id>
+    <published>2022-02-24T10:05:46.000Z</published>
+    <updated>2022-04-05T12:09:28.698Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;JUnit-Rule-简述&quot;&gt;&lt;a href=&quot;#JUnit-Rule-简述&quot; class=&quot;headerlink&quot; title=&quot;JUnit Rule 简述&quot;&gt;&lt;/a&gt;JUnit Rule 简述&lt;/h1&gt;&lt;p&gt;Rule 是 JUnit 4.7 之后新加入的特性，有点类似于拦截器，可以在测试类或测试方法执行前后添加额外的处理，本质上是对 @BeforeClass, @AfterClass, @Before, @After 等的另一种实现，只是功能上更灵活多变，易于扩展，且方便在类和项目之间共享。&lt;br&gt;JUnit 的 Rule 特性提供了两个注解 @Rule 和 @RuleClass，大体上说 @Rule 可以与 @Before 及 @After 对应，@ClassRule 可以与 @BeforeClass 及 @AfterClass 对应。自 JUnit4.10 起可以使用 TestRule 接口代替此前一直在用的 MethodRule 接口，实际项目中可以通过实现 TestRule 或继承自 JUnit 内置 Rule 类进行扩展&lt;/p&gt;
+&lt;h1 id=&quot;适用场景&quot;&gt;&lt;a href=&quot;#适用场景&quot; class=&quot;headerlink&quot; title=&quot;适用场景&quot;&gt;&lt;/a&gt;适用场景&lt;/h1&gt;&lt;p&gt;在简述中已经提到 Rule 特性本身也是对 @BeforeClass, @AfterClass, @Before, @After 功能的另外实现，所以基本上这四种注解的使用场景都适用于 Rule，同时 JUnit 内置的 Rule 类还能够提供这四种注解未提供的功能。总体上说 Rule 特性的适用场景包括但不限于如下需求：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在测试类或测试方法执行前后添加初始化或环境清理操作&lt;/li&gt;
+&lt;li&gt;在测试执行过程中收集错误信息且无需中断测试&lt;/li&gt;
+&lt;li&gt;在测试结束后添加额外的测试结果校验功能&lt;/li&gt;
+&lt;li&gt;在测试执行前后创建及删除测试执行过程中产生的临时文件或目录&lt;/li&gt;
+&lt;li&gt;对测试过程中产生的异常进行灵活校验&lt;/li&gt;
+&lt;li&gt;将多个 Rules 串接在一起执行&lt;/li&gt;
+&lt;li&gt;测试用例执行失败时重试指定次数&lt;br&gt;从使用习惯上来说，对于简单项目，@BeforeClass, @AfterClass, @Before, @After 等注解已经能够满足测试需求；对于复杂点的项目，从易扩展、易维护和方便复用的角度考虑最好使用 Rule 特性，方便添加和移除 Rule 实例，灵活性大大提高。&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java Lambda 表达式</title>
+    <link href="https://sirius1919.github.io/2022/02/24/8e84b9d0.html"/>
+    <id>https://sirius1919.github.io/2022/02/24/8e84b9d0.html</id>
+    <published>2022-02-24T07:37:27.000Z</published>
+    <updated>2022-04-05T12:09:28.591Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Lambda 表达式，也可称为闭包，它是推动 Java 8 发布的最重要新特性。&lt;br&gt;Lambda 允许把函数作为一个方法的参数（函数作为参数传递进方法中）。&lt;br&gt;使用 Lambda 表达式可以使代码变的更加简洁紧凑。&lt;/p&gt;
+&lt;h1 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;语法&lt;/h1&gt;&lt;p&gt;lambda 表达式的语法格式如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;(parameters) -&amp;gt; expression&lt;br&gt;或&lt;br&gt;(parameters) -&amp;gt;{statements; }&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;以下是 lambda 表达式的重要特征:&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JUnit5 测试框架</title>
+    <link href="https://sirius1919.github.io/2022/02/23/a1343298.html"/>
+    <id>https://sirius1919.github.io/2022/02/23/a1343298.html</id>
+    <published>2022-02-23T06:46:28.000Z</published>
+    <updated>2022-04-05T12:09:28.589Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;关于-JUnit5&quot;&gt;&lt;a href=&quot;#关于-JUnit5&quot; class=&quot;headerlink&quot; title=&quot;关于 JUnit5&quot;&gt;&lt;/a&gt;关于 JUnit5&lt;/h1&gt;&lt;p&gt;JUnit5 与以前版本的&lt;a href=&quot;https://so.csdn.net/so/search?q=JUnit&amp;spm=1001.2101.3001.7020&quot;&gt;JUnit&lt;/a&gt;不同，JUnit 5 由三个不同子项目中的几个不同模块组成。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;JUnit 5 &amp;#x3D; JUnit Platform + JUnit Jupiter + JUnit Vintage&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;JUnit Platform 是基于 JVM 的运行测试的基础框架在，它定义了开发运行在这个测试框架上的 TestEngine API。此外该平台提供了一个控制台启动器，可以从命令行启动平台，可以为 Gradle 和 Maven 构建插件，同时提供基于 JUnit 4 的 Runner。&lt;/li&gt;
+&lt;li&gt;JUnit Jupiter 是在 JUnit 5 中编写测试和扩展的新编程模型和扩展模型的组合.Jupiter 子项目提供了一个 TestEngine 在平台上运行基于 Jupiter 的测试。&lt;/li&gt;
+&lt;li&gt;JUnit Vintage 提供了一个 TestEngine 在平台上运行基于 JUnit 3 和 JUnit 4 的测试。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;引入依赖包&quot;&gt;&lt;a href=&quot;#引入依赖包&quot; class=&quot;headerlink&quot; title=&quot;引入依赖包&quot;&gt;&lt;/a&gt;引入依赖包&lt;/h1&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JUnit4 测试框架</title>
+    <link href="https://sirius1919.github.io/2022/02/23/3c3bd3ee.html"/>
+    <id>https://sirius1919.github.io/2022/02/23/3c3bd3ee.html</id>
+    <published>2022-02-23T01:43:50.000Z</published>
+    <updated>2022-04-05T12:09:28.681Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;（一）JUnit-介绍&quot;&gt;&lt;a href=&quot;#（一）JUnit-介绍&quot; class=&quot;headerlink&quot; title=&quot;（一）JUnit 介绍&quot;&gt;&lt;/a&gt;（一）JUnit 介绍&lt;/h1&gt;&lt;h2 id=&quot;1-什么是单元测试？&quot;&gt;&lt;a href=&quot;#1-什么是单元测试？&quot; class=&quot;headerlink&quot; title=&quot;1. 什么是单元测试？&quot;&gt;&lt;/a&gt;1. 什么是单元测试？&lt;/h2&gt;&lt;p&gt;单元测试负责对最小的软件设计单元（模块）进行验证，根据软件设计文档中对模块功能的描述，对重要的程序分支进行测试并发现错误。&lt;/p&gt;
+&lt;h2 id=&quot;2-什么是单元测试框架？&quot;&gt;&lt;a href=&quot;#2-什么是单元测试框架？&quot; class=&quot;headerlink&quot; title=&quot;2. 什么是单元测试框架？&quot;&gt;&lt;/a&gt;2. 什么是单元测试框架？&lt;/h2&gt;&lt;p&gt;对于单元测试框架来讲，它主要完成以下几件事。&lt;br&gt;提供用例组织与执行：测试用例只有几条时，可以不考虑用例组织，但是用例达到成百上千时，大量的测试用例堆砌在一起，就产生了扩展性与维护性等问题&lt;br&gt;提供丰富的断言方法：不论是功能测试，还是单元测试，在用例执行完之后都需要将实际结果与预期结果相比较（断言），从而断定用例是否执行通过。单元测试框架一般提供丰富的断言方法。例如：判断相等 &amp;#x2F; 不等、包含 &amp;#x2F; 不包含、True&amp;#x2F;False 的断言方法等&lt;br&gt;提供丰富的日志： 当测试用例执行失败时能抛出清晰的失败原因，当所有用例执行完成后能提供丰富的执行结果。例如，总执行时间、失败用例数、成功用例数等。&lt;br&gt;从这些特性来看单元测试框架的作用是：帮助我们更自动化完成测试，所以，它是自动化测试的基础。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>简易HTTP通信</title>
+    <link href="https://sirius1919.github.io/2022/02/22/96bb480a.html"/>
+    <id>https://sirius1919.github.io/2022/02/22/96bb480a.html</id>
+    <published>2022-02-22T10:27:25.000Z</published>
+    <updated>2022-04-05T12:09:28.661Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>即时通信</title>
+    <link href="https://sirius1919.github.io/2022/02/21/63ac674b.html"/>
+    <id>https://sirius1919.github.io/2022/02/21/63ac674b.html</id>
+    <published>2022-02-21T09:26:16.000Z</published>
+    <updated>2022-04-05T12:09:28.647Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;1-即时通信的含义，要实现怎么样的设计？&quot;&gt;&lt;a href=&quot;#1-即时通信的含义，要实现怎么样的设计？&quot; class=&quot;headerlink&quot; title=&quot;1. 即时通信的含义，要实现怎么样的设计？&quot;&gt;&lt;/a&gt;1. 即时通信的含义，要实现怎么样的设计？&lt;/h1&gt;&lt;p&gt;即时通信，是指一个客户端的消息发出去，其他客户端可以接收到。&lt;br&gt;即时通需要进行端口转发的设计思想。&lt;/p&gt;
+&lt;h1 id=&quot;2-实现步骤&quot;&gt;&lt;a href=&quot;#2-实现步骤&quot; class=&quot;headerlink&quot; title=&quot;2. 实现步骤&quot;&gt;&lt;/a&gt;2. 实现步骤&lt;/h1&gt;&lt;h2 id=&quot;群聊&quot;&gt;&lt;a href=&quot;#群聊&quot; class=&quot;headerlink&quot; title=&quot;群聊&quot;&gt;&lt;/a&gt;群聊&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://cdn.nlark.com/yuque/0/2022/png/22022914/1645435823589-0dc47969-4824-4917-8f73-517c5b44e81b.png#clientId=u745436db-35be-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=283&amp;id=u8eb50f68&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=275&amp;originWidth=632&amp;originalType=binary%E2%88%B6=1&amp;rotation=0&amp;showTitle=false&amp;size=91835&amp;status=done&amp;style=none&amp;taskId=u05e4b252-11e8-4878-b511-4846b4eb63c&amp;title=&amp;width=651&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Socket类 实现 tcp传输</title>
+    <link href="https://sirius1919.github.io/2022/02/20/25213ab5.html"/>
+    <id>https://sirius1919.github.io/2022/02/20/25213ab5.html</id>
+    <published>2022-02-20T12:24:55.000Z</published>
+    <updated>2022-04-05T12:09:28.608Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;TCP-通信模式演示&quot;&gt;&lt;a href=&quot;#TCP-通信模式演示&quot; class=&quot;headerlink&quot; title=&quot;TCP 通信模式演示&quot;&gt;&lt;/a&gt;TCP 通信模式演示&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;https://cdn.nlark.com/yuque/0/2022/png/22022914/1645362382990-62575aa0-903b-48c2-81ea-df299442e1b4.png#clientId=u608d1a05-df31-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=271&amp;id=xzb5q&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=541&amp;originWidth=1429&amp;originalType=binary%E2%88%B6=1&amp;rotation=0&amp;showTitle=false&amp;size=140804&amp;status=done&amp;style=none&amp;taskId=u40ff0386-af11-4aa1-855f-7a7c786da68&amp;title=&amp;width=714.5&quot; alt=&quot;image.png&quot;&gt;&lt;br&gt;在 java 中使用 java.net.socket 类实现通信，底层即使用 tcp 协议。&lt;/p&gt;
+&lt;h1 id=&quot;socket-客户端实现步骤&quot;&gt;&lt;a href=&quot;#socket-客户端实现步骤&quot; class=&quot;headerlink&quot; title=&quot;socket 客户端实现步骤&quot;&gt;&lt;/a&gt;socket 客户端实现步骤&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;创建客户端 Socket 对象，请求与服务器的连接。&lt;/li&gt;
+&lt;li&gt;使用 Socket 对象调用 getOutputStream()方法得到字节输出流。&lt;/li&gt;
+&lt;li&gt;使用字节输出流完成数据的传输。&lt;/li&gt;
+&lt;li&gt;释放资源：关闭 socket 管道。（尽可能别关闭）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;package&lt;/span&gt; tcptest;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.io.IOException;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.io.OutputStream;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.io.PrintStream;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.net.Socket;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// sender&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;clientDemo1&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String[] args)&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;throws&lt;/span&gt; IOException &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;comment&quot;&gt;// 创建Socket通信管道请求服务端的链接&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            Socket socket = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Socket(&lt;span class=&quot;string&quot;&gt;&amp;quot;127.0.0.1&amp;quot;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;8888&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;comment&quot;&gt;// 从socket通信管道中得到一个字节输出流，负责发送数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            OutputStream os = socket.getOutputStream();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;comment&quot;&gt;// 把低级的字节输出流包装成打印流&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            PrintStream ps = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; PrintStream(os);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;comment&quot;&gt;// 发送数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            ps.println(&lt;span class=&quot;string&quot;&gt;&amp;quot;tcp1&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            ps.flush();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125; &lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (Exception e) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            e.printStackTrace();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>DatagramSocket 实现 UDP传输</title>
+    <link href="https://sirius1919.github.io/2022/02/20/d0d80d8a.html"/>
+    <id>https://sirius1919.github.io/2022/02/20/d0d80d8a.html</id>
+    <published>2022-02-20T08:58:02.000Z</published>
+    <updated>2022-04-05T12:09:28.585Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;UDP-点对点发送&quot;&gt;&lt;a href=&quot;#UDP-点对点发送&quot; class=&quot;headerlink&quot; title=&quot;UDP 点对点发送&quot;&gt;&lt;/a&gt;UDP 点对点发送&lt;/h1&gt;&lt;p&gt;发送端代码&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;package&lt;/span&gt; udptest;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.io.IOException;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.net.*;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// sender&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;clientDemo1&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String[] args)&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;throws&lt;/span&gt; IOException &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 创建发送端对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        DatagramSocket sender = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; DatagramSocket();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 创建数据包对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;byte&lt;/span&gt;[] buffer = &lt;span class=&quot;string&quot;&gt;&amp;quot;我是发送端，你是接收端吗?&amp;quot;&lt;/span&gt;.getBytes();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        DatagramPacket packet = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; DatagramPacket(buffer, buffer.length, InetAddress.getLocalHost(), &lt;span class=&quot;number&quot;&gt;8888&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 发送数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        sender.send(packet);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 关闭发送端&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        sender.close();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;接收端代码&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;package&lt;/span&gt; udptest;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.io.IOException;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.net.DatagramPacket;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.net.DatagramSocket;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//receiver&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;serverDemo1&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String[] args)&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;throws&lt;/span&gt; IOException &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 创建接受端对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        DatagramSocket receiver = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; DatagramSocket(&lt;span class=&quot;number&quot;&gt;8888&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 创建接受的数据包&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;byte&lt;/span&gt;[] buffer = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;byte&lt;/span&gt;[&lt;span class=&quot;number&quot;&gt;1024&lt;/span&gt; * &lt;span class=&quot;number&quot;&gt;64&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        DatagramPacket packet = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; DatagramPacket(buffer, buffer.length);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 等待接受数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        receiver.receive(packet);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 取出资源&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        String rs = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; String(buffer, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, packet.getLength());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        System.out.printf(&lt;span class=&quot;string&quot;&gt;&amp;quot;获取的数据：%s%n&amp;quot;&lt;/span&gt;,rs);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 关闭接收端&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        receiver.close();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+</feed>
